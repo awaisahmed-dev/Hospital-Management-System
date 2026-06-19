@@ -1,6 +1,6 @@
 <?php
 
-namespace Backend\Modules\CoreAdministration\Appointments\Models;
+namespace Backend\Modules\Clinical\Appointments\Models;
 
 use Backend\Modules\CoreAdministration\Patients\Models\Patient;
 use Backend\Modules\CoreAdministration\Doctors\Models\Doctor;

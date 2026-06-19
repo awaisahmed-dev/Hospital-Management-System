@@ -9,7 +9,17 @@ use Backend\Modules\CoreAdministration\Branches\Controllers\BranchController;
 use Backend\Modules\CoreAdministration\Rooms\Controllers\RoomController;
 use Backend\Modules\CoreAdministration\Beds\Controllers\BedController;
 use Backend\Modules\CoreAdministration\Staff\Controllers\StaffController;
-use Backend\Modules\CoreAdministration\Appointments\Controllers\AppointmentController;
+use Backend\Modules\Clinical\Appointments\Controllers\AppointmentController;
+use Backend\Modules\Clinical\Consultations\Controllers\ConsultationController;
+use Backend\Modules\Clinical\Diagnoses\Controllers\DiagnosisController;
+use Backend\Modules\Clinical\Prescriptions\Controllers\PrescriptionController;
+use Backend\Modules\Clinical\LabOrders\Controllers\LabOrderController;
+use Backend\Modules\Clinical\Radiology\Controllers\RadiologyController;
+use Backend\Modules\Operations\Controllers\AdmissionController;
+use Backend\Modules\Operations\Controllers\DischargeController;
+use Backend\Modules\Operations\Controllers\WardManagementController;
+use Backend\Modules\Operations\Controllers\NursingController;
+use Backend\Modules\Operations\Controllers\SchedulingController;
 
 Route::prefix('admin')->group(function () {
 
@@ -61,6 +71,56 @@ Route::prefix('admin')->group(function () {
     Route::resource(
     'appointments',
     AppointmentController::class
+    );
+
+    Route::resource(
+    'consultations',
+    ConsultationController::class
+    );
+
+    Route::resource(
+    'diagnoses',
+    DiagnosisController::class
+    );
+
+    Route::resource(
+    'prescriptions',
+    PrescriptionController::class
+    );
+
+    Route::resource(
+    'laborders',
+    LabOrderController::class
+    );
+
+    Route::resource(
+    'radiology',
+    RadiologyController::class
+    );
+
+    Route::resource(
+    'admissions',
+    AdmissionController::class
+    );
+
+    Route::resource(
+    'discharges',
+    DischargeController::class
+    );
+
+    Route::resource(
+    'wardmanagement',
+    WardManagementController::class
+    );
+
+    Route::resource(
+    'nursing',
+    NursingController::class
+    );
+
+    Route::resource(
+    'scheduling',
+    SchedulingController::class
     );
 
 });
