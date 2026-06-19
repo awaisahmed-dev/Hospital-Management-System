@@ -108,12 +108,65 @@
 
         <a href="/admin/staff">Staff</a>
 
-    <a href="{{ route('appointments.index') }}">
-        Appointments
+    </div>
+
+    <a href="javascript:void(0)"
+       onclick="toggleMenu('clinical')">
+
+        <i class="fa fa-database"></i>
+
+        Clinical
+
     </a>
 
+    <div id="clinical" class="submenu">
+
+        <a href="/admin/appointments">Appointments</a>
+
+        <a href="/admin/consultations">Consultations</a>
+
+        <a href="/admin/diagnoses">Diagnoses</a>
+
+        <a href="/admin/prescriptions">Prescriptions</a>
+
+        <a href="/admin/laborders">LabOrders</a>
+
+        <a href="/admin/radiology">Radiology</a>
 
     </div>
+
+    <a href="javascript:void(0)"
+   onclick="toggleMenu('operations')">
+
+    <i class="fa fa-hospital"></i>
+
+    Operations
+
+</a>
+
+<div id="operations" class="submenu">
+
+    <a href="/admin/admissions">
+        Admissions
+    </a>
+
+    <a href="/admin/discharges">
+        Discharges
+    </a>
+
+    <a href="/admin/wardmanagement">
+        Ward Management
+    </a>
+
+    <a href="/admin/nursing">
+        Nursing
+    </a>
+
+    <a href="/admin/scheduling">
+        Scheduling
+    </a>
+
+</div>
 
 </div>
 

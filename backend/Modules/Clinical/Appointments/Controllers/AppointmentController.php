@@ -1,11 +1,11 @@
 <?php
 
-namespace Backend\Modules\CoreAdministration\Appointments\Controllers;
+namespace Backend\Modules\Clinical\Appointments\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Backend\Modules\CoreAdministration\Appointments\Models\Appointment;
+use Backend\Modules\Clinical\Appointments\Models\Appointment;
 use Backend\Modules\CoreAdministration\Patients\Models\Patient;
 use Backend\Modules\CoreAdministration\Doctors\Models\Doctor;
 
