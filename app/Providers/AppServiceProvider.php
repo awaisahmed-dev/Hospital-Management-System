@@ -27,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
         View::addLocation(
             base_path('backend/Modules/Finance/Views')
         );
+
+        View::addLocation(
+            base_path('backend/Modules/Reports/Views')
+        );
     }
 }

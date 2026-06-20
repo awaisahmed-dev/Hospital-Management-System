@@ -26,6 +26,10 @@ use Backend\Modules\Finance\Controllers\BillingController;
 use Backend\Modules\Finance\Controllers\InsuranceController;
 use Backend\Modules\Finance\Controllers\ExpenseController;
 use Backend\Modules\Finance\Controllers\PayrollController;
+use Backend\Modules\Reports\Controllers\FinancialReportController;
+use Backend\Modules\Reports\Controllers\ClinicalReportController;
+use Backend\Modules\Reports\Controllers\AuditLogController;
+use Backend\Modules\Reports\Controllers\AnalyticsController;
 
 Route::prefix('admin')->group(function () {
 
@@ -158,6 +162,27 @@ Route::prefix('admin')->group(function () {
     'payrolls',
     PayrollController::class
     );
+
+    
+    Route::get(
+        'financialreports',
+        [FinancialReportController::class,'index']
+    )->name('financialreports.index');
+
+    Route::get(
+    'clinicalreports',
+    [ClinicalReportController::class,'index']
+    )->name('clinicalreports.index');
+    
+    Route::get(
+        'auditlogs',
+        [AuditLogController::class,'index']
+    )->name('auditlogs.index');
+    
+    Route::get(
+        'analytics',
+        [AnalyticsController::class,'index']
+    )->name('analytics.index');
 
 });
 

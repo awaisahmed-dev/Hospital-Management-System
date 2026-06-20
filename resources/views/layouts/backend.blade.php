@@ -205,6 +205,36 @@ Invoices
 
 </div>
 
+    
+<a href="javascript:void(0)"
+onclick="toggleMenu('reports')">
+
+<i class="fa fa-money-bill"></i>
+
+Reports
+
+</a>
+
+<div id="reports" class="submenu">
+
+<a href="/admin/financialreports">
+    Financial Reports
+</a>
+
+<a href="/admin/clinicalreports">
+    Clinical Reports
+</a>
+
+<a href="/admin/auditlogs">
+    Audit Logs
+</a>
+
+<a href="/admin/analytics">
+    Analytics
+</a>
+
+</div>
+
 </div>
 
 <div class="content">
