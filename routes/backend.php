@@ -41,7 +41,9 @@ use Backend\Modules\HRM\Controllers\HRMDepartmentController;
 use Backend\Modules\HRM\Controllers\DesignationController;
 use Backend\Modules\HRM\Controllers\LeaveController;
 use Backend\Modules\HRM\Controllers\AttendanceController;
-
+use Backend\Modules\UserManagement\Controllers\UserController;
+use Backend\Modules\UserManagement\Controllers\RoleController;
+use Backend\Modules\UserManagement\Controllers\PermissionController;
 
 Route::prefix('admin')->group(function () {
 
@@ -238,6 +240,21 @@ Route::prefix('admin')->group(function () {
     Route::resource('leaves', LeaveController::class);
     
     Route::resource('attendances', AttendanceController::class);
+
+    Route::resource(
+    'user',
+    UserController::class
+    );
+
+    Route::resource(
+    'roles',
+    RoleController::class
+    );
+
+    Route::resource(
+    'permissions',
+    PermissionController::class
+    );
 
 });
 

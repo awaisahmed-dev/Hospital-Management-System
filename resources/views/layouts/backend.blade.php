@@ -331,6 +331,31 @@ Attendance
 
 </div>
 
+        <a href="javascript:void(0)"
+onclick="toggleMenu('usermanagement')">
+
+<i class="fa fa-users-cog"></i>
+
+User Management
+
+</a>
+
+<div id="usermanagement" class="submenu">
+
+    <a href="/admin/user">
+        User
+    </a>
+
+    <a href="/admin/roles">
+        Role
+    </a>
+
+    <a href="/admin/permissions">
+        Permission
+    </a>
+
+</div>
+
 </div>
 
 <div class="content">
