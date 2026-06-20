@@ -20,6 +20,12 @@ use Backend\Modules\Operations\Controllers\DischargeController;
 use Backend\Modules\Operations\Controllers\WardManagementController;
 use Backend\Modules\Operations\Controllers\NursingController;
 use Backend\Modules\Operations\Controllers\SchedulingController;
+use Backend\Modules\Finance\Controllers\InvoiceController;
+use Backend\Modules\Finance\Controllers\PaymentController;
+use Backend\Modules\Finance\Controllers\BillingController;
+use Backend\Modules\Finance\Controllers\InsuranceController;
+use Backend\Modules\Finance\Controllers\ExpenseController;
+use Backend\Modules\Finance\Controllers\PayrollController;
 
 Route::prefix('admin')->group(function () {
 
@@ -121,6 +127,36 @@ Route::prefix('admin')->group(function () {
     Route::resource(
     'scheduling',
     SchedulingController::class
+    );
+
+    Route::resource(
+    'invoices',
+    InvoiceController::class
+    );
+
+    Route::resource(
+    'payments',
+    PaymentController::class
+    );
+
+    Route::resource(
+    'billings',
+    BillingController::class
+    );
+
+    Route::resource(
+    'insurances',
+    InsuranceController::class
+    );
+
+    Route::resource(
+    'expenses',
+    ExpenseController::class
+    );
+
+    Route::resource(
+    'payrolls',
+    PayrollController::class
     );
 
 });
