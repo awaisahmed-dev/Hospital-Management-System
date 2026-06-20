@@ -298,6 +298,39 @@ Purchase Orders
 
 </div>
 
+<a href="javascript:void(0)"
+onclick="toggleMenu('hrm')">
+
+<i class="fa fa-users"></i>
+
+HRM
+
+</a>
+
+<div id="hrm" class="submenu">
+
+<a href="/admin/employees">
+Employees
+</a>
+
+<a href="/admin/hrmdepartments">
+Departments
+</a>
+
+<a href="/admin/designations">
+Designations
+</a>
+
+<a href="/admin/leaves">
+Leaves
+</a>
+
+<a href="/admin/attendances">
+Attendance
+</a>
+
+</div>
+
 </div>
 
 <div class="content">
