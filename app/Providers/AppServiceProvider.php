@@ -39,5 +39,11 @@ class AppServiceProvider extends ServiceProvider
         View::addLocation(
         base_path('backend/Modules/HRM/Views')
         );
+
+        View::addLocation(
+        base_path(
+        'backend/Modules/UserManagement/Views'
+        )
+        );
     }
 }
