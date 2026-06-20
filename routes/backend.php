@@ -36,6 +36,11 @@ use Backend\Modules\Inventory\Controllers\ProductController;
 use Backend\Modules\Inventory\Controllers\StockInController;
 use Backend\Modules\Inventory\Controllers\StockOutController;
 use Backend\Modules\Inventory\Controllers\PurchaseOrderController;
+use Backend\Modules\HRM\Controllers\EmployeeController;
+use Backend\Modules\HRM\Controllers\HRMDepartmentController;
+use Backend\Modules\HRM\Controllers\DesignationController;
+use Backend\Modules\HRM\Controllers\LeaveController;
+use Backend\Modules\HRM\Controllers\AttendanceController;
 
 
 Route::prefix('admin')->group(function () {
@@ -222,6 +227,17 @@ Route::prefix('admin')->group(function () {
         'purchaseorders',
         PurchaseOrderController::class
     );
+
+    
+    Route::resource('employees', EmployeeController::class);
+    
+    Route::resource('hrmdepartments', HRMDepartmentController::class);
+    
+    Route::resource('designations', DesignationController::class);
+    
+    Route::resource('leaves', LeaveController::class);
+    
+    Route::resource('attendances', AttendanceController::class);
 
 });
 
