@@ -168,6 +168,43 @@
 
 </div>
 
+<a href="javascript:void(0)"
+onclick="toggleMenu('finance')">
+
+<i class="fa fa-money-bill"></i>
+
+Finance
+
+</a>
+
+<div id="finance" class="submenu">
+
+<a href="/admin/invoices">
+Invoices
+</a>
+
+<a href="/admin/payments">
+    Payments
+</a>
+
+<a href="/admin/billings">
+        Billing
+    </a>
+    
+<a href="/admin/insurances">
+        Insurance
+    </a>
+
+    <a href="/admin/expenses">
+        Expenses
+    </a>
+
+    <a href="/admin/payrolls">
+        Payroll
+    </a>
+
+</div>
+
 </div>
 
 <div class="content">
