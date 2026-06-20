@@ -30,6 +30,13 @@ use Backend\Modules\Reports\Controllers\FinancialReportController;
 use Backend\Modules\Reports\Controllers\ClinicalReportController;
 use Backend\Modules\Reports\Controllers\AuditLogController;
 use Backend\Modules\Reports\Controllers\AnalyticsController;
+use Backend\Modules\Inventory\Controllers\SupplierController;
+use Backend\Modules\Inventory\Controllers\CategoryController;
+use Backend\Modules\Inventory\Controllers\ProductController;
+use Backend\Modules\Inventory\Controllers\StockInController;
+use Backend\Modules\Inventory\Controllers\StockOutController;
+use Backend\Modules\Inventory\Controllers\PurchaseOrderController;
+
 
 Route::prefix('admin')->group(function () {
 
@@ -183,6 +190,38 @@ Route::prefix('admin')->group(function () {
         'analytics',
         [AnalyticsController::class,'index']
     )->name('analytics.index');
+
+
+    Route::resource(
+    'suppliers',
+    SupplierController::class
+    );
+    
+    Route::resource(
+        'categories',
+        CategoryController::class
+    );
+    
+    Route::resource(
+        'products',
+        ProductController::class
+    );
+
+    
+    Route::resource(
+        'stockins',
+        StockInController::class
+    );
+    
+    Route::resource(
+        'stockouts',
+        StockOutController::class
+    );
+    
+    Route::resource(
+        'purchaseorders',
+        PurchaseOrderController::class
+    );
 
 });
 

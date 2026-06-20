@@ -21,7 +21,33 @@
             background:#1f2937;
             position:fixed;
             transition:.3s;
-            overflow:hidden;
+            /* overflow:hidden; */
+            overflow-y:auto;
+            overflow-x:hidden;
+        }
+
+        .sidebar::-webkit-scrollbar{
+        width:5px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb{
+            background:#4b5563;
+            border-radius:10px;
+        }
+
+        .sidebar{
+        width:70px;
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+
+        background:#1f2937;
+
+        overflow-y:auto;
+        overflow-x:hidden;
+
+        transition:.3s;
         }
 
         .sidebar:hover{
@@ -231,6 +257,43 @@ Reports
 
 <a href="/admin/analytics">
     Analytics
+</a>
+
+</div>
+
+        <a href="javascript:void(0)"
+onclick="toggleMenu('inventory')">
+
+<i class="fa fa-box"></i>
+
+Inventory
+
+</a>
+
+<div id="inventory" class="submenu">
+
+<a href="/admin/suppliers">
+Suppliers
+</a>
+
+<a href="/admin/categories">
+Categories
+</a>
+
+<a href="/admin/products">
+Products
+</a>
+
+<a href="/admin/stockins">
+Stock In
+</a>
+
+<a href="/admin/stockouts">
+Stock Out
+</a>
+
+<a href="/admin/purchaseorders">
+Purchase Orders
 </a>
 
 </div>
