@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Backend\Modules\Reports\Controllers\FinancialReportController;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;    
 
 Route::post(
     '/logout',
