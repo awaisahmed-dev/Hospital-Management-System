@@ -44,6 +44,9 @@ use Backend\Modules\HRM\Controllers\AttendanceController;
 use Backend\Modules\UserManagement\Controllers\UserController;
 use Backend\Modules\UserManagement\Controllers\RoleController;
 use Backend\Modules\UserManagement\Controllers\PermissionController;
+use Backend\Modules\Notifications\Controllers\NotificationController;
+use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
 
@@ -255,6 +258,24 @@ Route::prefix('admin')->group(function () {
     'permissions',
     PermissionController::class
     );
+
+    Route::resource(
+    'notifications',
+    NotificationController::class
+    );
+
+    
+Route::post('/logout', function () {
+
+    Auth::logout();
+
+    request()->session()->invalidate();
+
+    request()->session()->regenerateToken();
+
+    return redirect('/');
+
+})->name('logout');
 
 });
 

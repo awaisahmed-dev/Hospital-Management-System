@@ -26,6 +26,15 @@
             overflow-x:hidden;
         }
 
+        .sidebar{
+        width:70px;
+        transition:.3s;
+        }
+
+        .sidebar.active{
+        width:280px;
+        }
+
         .sidebar::-webkit-scrollbar{
         width:5px;
         }
@@ -71,6 +80,15 @@
             transition:.3s;
         }
 
+        .content{
+        margin-left:70px;
+        transition:.3s;
+        }
+
+        .content.active{
+        margin-left:280px;
+        }
+
         .sidebar:hover ~ .content{
             margin-left:280px;
         }
@@ -89,10 +107,255 @@
         display:block;
         }
 
+        .topbar{
+
+    height:60px;
+
+    background:white;
+
+    border-bottom:1px solid #ddd;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    position:fixed;
+
+    left:70px;
+
+    right:0;
+
+    top:0;
+
+    z-index:999;
+}
+
+.topbar{
+    left:70px;
+    transition:.3s;
+}
+
+.topbar.active{
+    left:280px;
+}
+
+.content{
+
+    margin-top:70px;
+}
+
+.menu-btn{
+
+    border:none;
+
+    background:none;
+
+    font-size:20px;
+}
+
+.quick-menu,
+.dropdown-box{
+
+    display:none;
+
+    position:absolute;
+
+    background:white;
+
+    min-width:220px;
+
+    box-shadow:0 0 10px #ccc;
+
+    padding:10px;
+
+    border-radius:5px;
+
+    z-index:9999;
+}
+
+.quick-menu.show,
+.dropdown-box.show{
+
+    display:block;
+}
+
+.quick-menu a,
+.dropdown-box a{
+
+    display:block;
+
+    padding:8px;
+
+    text-decoration:none;
+
+    color:#333;
+}
+
+.quick-menu a:hover,
+.dropdown-box a:hover{
+
+    background:#f5f5f5;
+}
+
+.right-menu{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+}
+
+.notification-dropdown,
+.user-dropdown{
+
+    position:relative;
+
+    cursor:pointer;
+}
+
     </style>
 
 </head>
 <body>
+
+    <div class="topbar">
+
+    <div class="left-menu">
+
+        <!-- <button onclick="toggleQuickMenu()"
+                class="menu-btn">
+
+            <i class="fa fa-bars"></i>
+
+        </button> -->
+
+        <button onclick="toggleSidebar()"
+        class="menu-btn">
+
+        <i class="fa fa-bars"></i>
+
+        </button>
+
+        <!-- <div id="quickMenu"
+             class="quick-menu">
+
+            <a href="#">
+                New
+            </a>
+
+            <a href="#">
+                Quick
+            </a>
+
+            <a href="#">
+                Support
+            </a>
+
+        </div> -->
+        
+
+    </div>
+
+    <div class="right-menu">
+
+        <div class="notification-dropdown">
+
+            <i class="fa fa-bell"
+               onclick="toggleNotifications()"></i>
+
+            <div id="notificationBox"
+                 class="dropdown-box">
+
+                <h6>Notifications</h6>
+
+                <hr>
+
+                <a href="#">
+                    New Appointment Created
+                </a>
+
+                <a href="#">
+                    Invoice Generated
+                </a>
+
+                <a href="#">
+                    Leave Approved
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="user-dropdown">
+
+            <span onclick="toggleUserMenu()">
+
+                admin@hospital
+
+            </span>
+
+            <div id="userBox"
+                 class="dropdown-box">
+
+                <div class="text-center">
+
+                    <img src="https://via.placeholder.com/80"
+                         class="rounded-circle">
+
+                    <br><br>
+
+                    <strong>
+                        admin@hospital
+                    </strong>
+
+                    <br>
+
+                    Member since 7/27/24
+
+                </div>
+
+                <hr>
+
+                <a href="#">
+                    Profile
+                </a>
+
+                <a href="#">
+                    Account
+                </a>
+
+<form method="POST"
+action="{{ route('logout') }}">
+
+@csrf
+
+<button
+type="submit"
+class="btn btn-danger btn-sm w-100">
+
+Logout
+
+</button>
+
+</form>
+
+                <!-- <a href="#"
+                class="btn btn-danger btn-sm w-100">
+                Logout
+                </a> -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <div class="sidebar">
 
@@ -356,6 +619,24 @@ User Management
 
 </div>
 
+<a href="javascript:void(0)"
+onclick="toggleMenu('notifications')">
+
+<i class="fa fa-bell"></i>
+
+Notifications
+
+</a>
+
+<div id="notifications"
+class="submenu">
+
+<a href="/admin/notifications">
+Notifications
+</a>
+
+</div>
+
 </div>
 
 <div class="content">
@@ -372,6 +653,56 @@ function toggleMenu(id)
         .getElementById(id)
         .classList
         .toggle('show');
+}
+
+</script>
+
+<script>
+
+function toggleQuickMenu()
+{
+    document
+    .getElementById('quickMenu')
+    .classList
+    .toggle('show');
+}
+
+function toggleNotifications()
+{
+    document
+    .getElementById('notificationBox')
+    .classList
+    .toggle('show');
+}
+
+function toggleUserMenu()
+{
+    document
+    .getElementById('userBox')
+    .classList
+    .toggle('show');
+}
+
+</script>
+
+<script>
+
+function toggleSidebar()
+{
+    document
+        .querySelector('.sidebar')
+        .classList
+        .toggle('active');
+
+    document
+        .querySelector('.content')
+        .classList
+        .toggle('active');
+
+    document
+        .querySelector('.topbar')
+        .classList
+        .toggle('active');
 }
 
 </script>
